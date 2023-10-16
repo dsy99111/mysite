@@ -1,0 +1,40 @@
+{%extends "base.html"%}
+{% block title %}
+Internship Online
+{% endblock title %}
+
+{%block body%}
+<h1> LEARN Projects in different technologies</h1>
+
+<div class="container">
+    {% for post in post%}
+<div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <a href="/contact" >
+      <img src="{{post.image.url}}" width="179" height="250" class="img-fluid rounded-start" alt="{{post.title|safe}}">
+      </a>
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{post.title|safe}}</h5>
+        <p class="card-text">{{post.content|safe|truncatechars:150}}</p>
+        <p class="card-text"><small class="text-body-secondary">Last updated {{post.time|safe}}</small></p>
+      </div>
+    </div>
+  </div>
+  </div>
+    {% endfor %}
+</div>
+<hr>
+<div>
+
+{% for video in video %}
+<video width="800" height="800" controls >
+<source src="{{video.video.url}}" type="video/mp4">
+
+</video>
+ {% endfor %}
+</div>
+
+{% endblock body %}
