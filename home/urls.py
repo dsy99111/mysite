@@ -17,7 +17,8 @@ urlpatterns = [
     path('loginform/',views.loginform,name="loginform"),
     path('signup/', views.signup, name="signup"),
 
-
+    path('login/', views.login, name="login"),
+    path('logout', views.logout, name="logout"),
 
 ]
 urlpatterns  += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
